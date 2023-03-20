@@ -7,8 +7,8 @@ liczby = input("podaj liczby oddzielone przecinkiem")
 
 liczby = liczby.split(',')
 
-max = -1
-min = sys.maxsize
+max = int(liczby[0])
+min = int(liczby[0])
 
 for i in liczby:
     integerVal = int(i)
@@ -19,3 +19,7 @@ for i in liczby:
 
 print(max)
 print(min)
+
+#--------------zadanie 2---------------------------
+
+
