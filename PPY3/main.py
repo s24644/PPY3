@@ -1,4 +1,4 @@
-import sys
+import getpass
 import random
 
 # -------------zadanie 1-------------------------------
@@ -91,33 +91,51 @@ elif game_type == "2 graczy":
     player2_name = input("Podaj nazwe drugiego gracza: ")
     for i in range(0, rounds):
         print("=-=-=-=-=-=RUNDA " + str(i+1) + "=-=-=-=-=-=")
-        player1_weapon = input(player1_name + ", podaj swoją broń: ")
-        player2_weapon = input(player2_name + ", podaj swoją broń: ")
+        player1_weapon = getpass.getpass(player1_name + ", podaj swoją broń: ")
+        player2_weapon = getpass.getpass(player2_name + ", podaj swoją broń: ")
 
         if player1_weapon == "papier" and player2_weapon == "papier":
             round_list.append("Remis")
+            print("Bron gracza " + player1_name + ": " + player1_weapon)
+            print("Bron gracza " + player2_name + ": " + player2_weapon)
         elif player1_weapon == "papier" and player2_weapon == "kamien":
             round_list.append("Wygrywa " + player1_name)
             player1_win_counter += 1
+            print("Bron gracza " + player1_name + ": " + player1_weapon)
+            print("Bron gracza " + player2_name + ": " + player2_weapon)
         elif player1_weapon == "papier" and player2_weapon == "nozyce":
             round_list.append("Wygrywa " + player2_name)
             player2_win_counter += 1
+            print("Bron gracza " + player1_name + ": " + player1_weapon)
+            print("Bron gracza " + player2_name + ": " + player2_weapon)
         elif player1_weapon == "kamien" and player2_weapon == "papier":
             round_list.append("Wygrywa " + player2_name)
             player2_win_counter += 1
+            print("Bron gracza " + player1_name + ": " + player1_weapon)
+            print("Bron gracza " + player2_name + ": " + player2_weapon)
         elif player1_weapon == "kamien" and player2_weapon == "kamien":
             round_list.append("remis")
+            print("Bron gracza " + player1_name + ": " + player1_weapon)
+            print("Bron gracza " + player2_name + ": " + player2_weapon)
         elif player1_weapon == "kamien" and player2_weapon == "nozyce":
             round_list.append("Wygrywa " + player1_name)
             player1_win_counter += 1
+            print("Bron gracza " + player1_name + ": " + player1_weapon)
+            print("Bron gracza " + player2_name + ": " + player2_weapon)
         elif player1_weapon == "nozyce" and player2_weapon == "papier":
             round_list.append("Wygrywa " + player1_name)
             player1_win_counter += 1
+            print("Bron gracza " + player1_name + ": " + player1_weapon)
+            print("Bron gracza " + player2_name + ": " + player2_weapon)
         elif player1_weapon == "nozyce" and player2_weapon == "kamien":
             round_list.append("Wygrywa " + player2_name)
             player2_win_counter += 1
+            print("Bron gracza " + player1_name + ": " + player1_weapon)
+            print("Bron gracza " + player2_name + ": " + player2_weapon)
         elif player1_weapon == "nozyce" and player2_weapon == "nozyce":
             round_list.append("remis")
+            print("Bron gracza " + player1_name + ": " + player1_weapon)
+            print("Bron gracza " + player2_name + ": " + player2_weapon)
 
 print("=-=-=-=WYNIKI=-=-=-=-=")
 
